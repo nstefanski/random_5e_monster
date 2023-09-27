@@ -166,7 +166,7 @@ function markdown_monster($monster) {
 		// these are links to spell descriptions
 	}
 	
-	$md .= ($monster->actions) ? "#### Ations\n" : "";
+	$md .= ($monster->actions) ? "#### Actions\n" : "";
 	foreach ($monster->actions as $action) {
 		$md .= "**_$action->name._** $action->desc\n\n";
 	}
