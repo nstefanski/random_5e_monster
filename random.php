@@ -40,7 +40,7 @@ if ($cr) {
 <p>
 	<strong>Data: </strong><a href="https://open5e.com" target="_blank">open5e.com</a>
 	<br/>
-	<strong>Code: </strong><a href="https://github.com/nstefanski/open5e-api" target="_blank">github.com/nstefanski/open5e-api</a>
+	<strong>Code: </strong><a href="https://github.com/nstefanski/random_5e_monster" target="_blank">github.com/nstefanski/random_5e_monster</a>
 </p>
 
 <?php
