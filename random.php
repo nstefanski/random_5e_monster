@@ -33,17 +33,20 @@ if ($cr) {
 	
 	$monster = random_monster_by_cr($cr);
 	echo $monster;
+	echo '<hr/>';
 }
 ?>
 
-<hr/>
-<p>
-	<strong>Data: </strong><a href="https://open5e.com" target="_blank">open5e.com</a>
-	<br/>
-	<strong>Code: </strong><a href="https://github.com/nstefanski/random_5e_monster" target="_blank">github.com/nstefanski/random_5e_monster</a>
-</p>
+<strong>Data: </strong><a href="https://open5e.com" target="_blank">open5e.com</a>
+<br/>
+<strong>Code: </strong><a href="https://github.com/nstefanski/random_5e_monster" target="_blank">github.com/nstefanski/random_5e_monster</a>
+<br/>
 
 <?php
+$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
+$url .= $_SERVER['HTTP_HOST'];
+echo '<strong>Home: </strong><a href="' . $url . '" target="_blank">' . $_SERVER['HTTP_HOST'] . '</a>';
+
 function random_monster_by_cr($cr) {
 	$uri = "https://api.open5e.com/v1/monsters/?limit=1&cr=$cr";
 	$monster_list = get_monsters($uri);
