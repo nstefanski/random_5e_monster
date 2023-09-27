@@ -45,7 +45,7 @@ if ($cr) {
 <?php
 $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
 $url .= $_SERVER['HTTP_HOST'];
-echo '<strong>Home: </strong><a href="' . $url . '" target="_blank">' . $_SERVER['HTTP_HOST'] . '</a>';
+echo '<strong>Home: </strong><a href="' . $url . '">' . $_SERVER['HTTP_HOST'] . '</a>';
 
 function random_monster_by_cr($cr) {
 	$uri = "https://api.open5e.com/v1/monsters/?limit=1&cr=$cr";
