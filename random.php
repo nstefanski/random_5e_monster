@@ -130,12 +130,13 @@ function markdown_monster($monster) {
 	
 	$md .= format_monster_saves($monster);
 	
-	if ($monster->skills || $monster->perception <> "") {
+	$skills_total = count(get_object_vars($monster->skills));
+	if ($skills_total > 0 || $monster->perception <> "") {
 		if ($monster->skills->perception && $monster->skills->perception <> $monster->perception){
 			$md .= "**Perception & Skills mismatch**  \n"; // not sure if this is possible?
+			$monster->skills->perception = $monster->perception;
 		}
 		$md .= "**Skills** ";
-		$skills_total = count(get_object_vars($monster->skills));
 		foreach ($monster->skills as $skill => $mod) {
 			$ct++;
 			$mod = ($mod >= 0) ? "+$mod" : $mod;
